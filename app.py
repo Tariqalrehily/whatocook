@@ -4,8 +4,8 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = "what_to_cook"
-app.config["MONGO_URI"] = "mongodb+srv://root:Anatar1010@myfirstcluster-ddwj9.mongodb.net/what_to_cook?retryWrites=true&w=majority"
+app.config["MONGO_DBNAME"] = "whatocook"
+app.config["MONGO_URI"] = "mongodb+srv://root:Tar1010@myfirstcluster-ddwj9.mongodb.net/whatocook?retryWrites=true&w=majority"
 
 mongo = PyMongo(app)
 

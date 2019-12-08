@@ -2,14 +2,13 @@
     <head>
 
     </head>
-    <<body>
+    <body>
       {% for recipe in recipes %}
-          {{recipe.user_name}}
-          {{recipe.recipe_name}}
-          {{recipe.ingredients}}
-          {{recipe.preparation_steps}}
-          {{recipe.requirements_tools}}
-          {{recipe.cuisine}}
+        {{recipe.recipe_cuisine}}
+        {{recipe.recipe_food_type}}
+        {{recipe.ingredients}}
+        {{recipe.preparation_steps}}
+        {{recipe.required_tools}}
       {% endfor %}
     </body>
 </html>
