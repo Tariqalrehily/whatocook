@@ -64,6 +64,11 @@ def update_cuisine(cuisine_id):
     mongo.db.cuisine.update({'_id': ObjectId(cuisine_id)},{'cuisine_name': request.fom.get['cuisine_name']})
     return redirect(url_for('get_cuisine'))
 
+@app.route('/delete_cuisine/<cuisine_id>')
+def delete_cuisine(cuisine_id):
+    mongo.db.cuisine.remove({'_id': ObjectId(cuisine_id)})
+    return redirect(url_for('get_cuisine'))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT', 3000)),
