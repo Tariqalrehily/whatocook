@@ -1,8 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
-<h3> Edit Recipe </h3>
+<h3> Add Recipe </h3>
 <div class="row">
-    <form action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
+    <form action="{{ url_for('update_recipe', recipe_id=recipes._id) }}" method="POST" class="col s12">
       <!-- Add recipe  -->
       <div class="row">
         <div class="input-field col s12">
@@ -10,7 +10,11 @@
           <select id="recipe_cuisine" name="recipe_cuisine">
             <option value="" disabled selected>Choose cuisine</option>
             {% for cuis in cuisine %}
-              <option value="{{cuis.cuisine_name}}">{{cuis.cuisine_name}}</option>
+                {% if cuis.cuisine_name == recipe.cuisine_name %}
+                  <option value="{{cuis.cuisine_name}}" selected>{{cuis.cuisine_name}}</option>
+                {% else %}
+                  <option value="{{cuis.cuisine_name}}">{{cuis.cuisine_name}}</option>
+                {% endif %}
             {% endfor %}
           </select>
           <label>Recipe Cuisine</label>
@@ -19,49 +23,53 @@
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">assignment</i>
-          <input id="recipe_food_type" name="rrecipe_food_type" type="text" class="validate">
+          <input id="recipe_food_type" name="rrecipe_food_type" type="text" class="validate" value="{{recipes.recipe_food_type}}">
           <label for="icon_prefix">Recipe Food Type, Example: Burger</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">assignment</i>
-          <input id="recipe_name" name="recipe_name" type="text" class="validate">
+          <input id="recipe_name" name="recipe_name" type="text" class="validate" value="{{recipes.recipe_name}}">
           <label for="icon_prefix">Recipe Name</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">subject</i>
-          <textarea name="ingredients" id="ingredients" class="materialize-textarea"></textarea>
+          <textarea name="ingredients" id="ingredients" class="materialize-textarea" value="{{recipes.ingredients}}"></textarea>
           <label for="icon_telephone">ingredients</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">subject</i>
-          <textarea name="preparation_steps" id="preparation_steps" class="materialize-textarea"></textarea>
+          <textarea name="preparation_steps" id="preparation_steps" class="materialize-textarea" value="{{recipes.preparation_steps}}"></textarea>
           <label for="icon_telephone">preparation_steps</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">subject</i>
-          <textarea name="required_tools" id="required_tools" class="materialize-textarea"></textarea>
+          <textarea name="required_tools" id="required_tools" class="materialize-textarea" value="{{recipes.required_tools}}"></textarea>
           <label for="icon_telephone">required_tools</label>
         </div>
       </div>
       <!-- <div class="row">
         <div class="switch">
           <label>
-            <input id="Recommended" name="Recommended" type="checkbox">
+            {% if recipe.recommended %}
+              <input id="recommended" name="recommended" type="checkbox" checked>
+            {% else %}
+              <input id="recommended" name="recommended" type="checkbox">
+            {% endif %}
             <span class="lever"></span>
             Recommended
           </label>
         </div>
       </div> -->
       <div class="row">
-        <button class="btn waves-effect waves-light" type="submit" name="action">Add Recipe
+        <button class="btn waves-effect waves-light" type="submit" name="action">Edit Recipe
           <i class="material-icons right">playlist_add</i>
         </button>
       </div>
