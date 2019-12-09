@@ -9,7 +9,7 @@
       <li>
         <div class="collapsible-header">
             <a href="" class="waves-effect waves-light btn_small btn">Delete</a>
-            <a href="" class="waves-effect waves-light btn_small btn blue">Edit</a>
+            <a href="{{url_for('edit_cuisine', cuisine_id = cuisine._id)}}" class="waves-effect waves-light btn_small btn blue">Edit</a>
           <div class="recipe_header">
             <strong>{{cuis.cuisine_name}}</strong>
           </div>

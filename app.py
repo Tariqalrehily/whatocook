@@ -49,11 +49,20 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({'_id': ObjectId(recipe_id)})
     return redirect(url_for('get_recipes'))
 
-# ----------------- cuisine  ----------------- 
+# ----------------- cuisine  -----------------
 
 @app.route('/get_cuisine')
 def get_cuisine():
     return render_template('cuisine.html', cuisine=mongo.db.cuisine.find())
+
+@app.route('/edit_cuisine/<cuisine_id>')
+def edit_cuisine(cuisine_id):
+    return render_template('editcuisine.html', cuisine=mongo.db.cuisine.find_one({'_id': ObjectId(cuisine_id)}))
+
+@app.route('/update_cuisine/<cuisine_id>', methods=['POST'])
+def update_cuisine(cuisine_id):
+    mongo.db.cuisine.update({'_id': ObjectId(cuisine_id)},{'cuisine_name': request.fom.get['cuisine_name']})
+    return redirect(url_for('get_cuisine'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
