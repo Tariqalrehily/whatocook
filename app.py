@@ -3,7 +3,7 @@ from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
-# app.config["MONGO_DBNAME"] = "whatocook"
+app.config["MONGO_DBNAME"] = "whatocook"
 app.config["MONGO_URI"] = "mongodb+srv://root:Tar1010@projectdb-ddwj9.mongodb.net/whatocook?retryWrites=true&w=majority"
 
 mongo = PyMongo(app)
@@ -14,7 +14,7 @@ def get_recipes():
 
 @app.route('/add_recipe')
 def add_recipe():
-    return render_template('addrecipe.html')
+    return render_template('addrecipe.html', add_recipe=mongo.db.cuisine.find());
 
 
 
@@ -22,6 +22,3 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
         port=int(os.environ.get('PORT', 3000)),
         debug=True)
-
-get_recipes()
-add_recipe()
