@@ -58,8 +58,7 @@ def delete_recipe(recipe_id):
 
 @app.route('/get_cuisines')
 def get_cuisines():
-    return render_template('cuisines.html',
-                           cuisines=mongo.db.cuisines.find())
+    return render_template('cuisines.html', cuisines=mongo.db.cuisines.find())
 
 
 @app.route('/delete_cuisine/<cuisine_id>')
