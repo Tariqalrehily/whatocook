@@ -17,14 +17,14 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li><a href="{{url_for('get_recipes')}}">Home</a></li>
-              <li><a href="{{url_for('add_recipe')}}">Add New Recipe</a></li>
+              <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
               <li><a href="{{url_for('get_cuisines')}}">Manage Cuisines</a></li>
             </ul>
           </div>
         </nav>
         <ul class="sidenav" id="mobile-demo">
           <li><a href="{{url_for('get_recipes')}}">Home</a></li>
-          <li><a href="{{url_for('add_recipe')}}">Add New Recipe</a></li>
+          <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
           <li><a href="{{url_for('get_cuisines')}}">Manage Cuisines</a></li>
         </ul>
       </header>
@@ -33,6 +33,13 @@
         <div class="container">
           {% block content %} {% endblock %}
         </div>
+        <footer class="page-footer black">
+          <div class="footer-copyright center">
+            <div class="container">
+            © 2019 T.AlRehily
+            </div>
+          </div>
+        </footer>
         <!-- Compiled jquery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript -->

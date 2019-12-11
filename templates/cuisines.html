@@ -2,16 +2,18 @@
 
 <div class="row">
 
-  <h3> Cuisines </h3>
+  <h3> Cuisines List</h3>
 
   <ul class="collapsible" data-collapsible="accordion">
       {% for cuisine in cuisines %}
       <li>
         <div class="collapsible-header">
-            <a href="{{url_for('delete_cuisine', cuisine_id=cuisine._id)}}"  class="waves-effect waves-light btn_small btn red">Delete</a>
-            <a href="{{url_for('edit_cuisine', cuisine_id=cuisine._id)}}" class="waves-effect waves-light btn_small btn blue">Edit</a>
-          <div class="recipe_header">
+          <div class="recipe_header col s8 center">
             <strong>{{cuisine.cuisine_name}}</strong>
+          </div>
+          <div class="col s4">
+          <a href="{{url_for('delete_cuisine', cuisine_id=cuisine._id)}}"  class="waves-effect waves-light btn_small btn red">Delete</a>
+          <a href="{{url_for('edit_cuisine', cuisine_id=cuisine._id)}}" class="waves-effect waves-light btn_small btn blue">Edit</a>
           </div>
         </div>
       </li>
