@@ -4,6 +4,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 
+# Connect to whatocook managdb 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = "whatocook"
 app.config["MONGO_URI"] = "mongodb+srv://root:Tar1010@projectdb-ddwj9.mongodb.net/whatocook?retryWrites=true&w=majority"
@@ -11,6 +12,9 @@ app.config["MONGO_URI"] = "mongodb+srv://root:Tar1010@projectdb-ddwj9.mongodb.ne
 mongo = PyMongo(app)
 
 @app.route('/')
+# ----------------- recipes  -----------------
+# routes for users to find, edit, update and deleted recipes
+
 @app.route('/get_recipes')
 def get_recipes():
     return render_template("recipes.html", recipes=mongo.db.recipes.find())
@@ -20,7 +24,7 @@ def get_recipes():
 def add_recipe():
     return render_template('addrecipe.html', cuisines=mongo.db.cuisines.find())
 
-# insert recipe route, insert as dictionary, so it can easily be understood by Mongo
+# insert recipe route, insert as dictionary, so it can easily be understood by mongo
 @app.route('/insert_recipe', methods=['POST'])
 def insert_recipe():
     recipes =  mongo.db.recipes
@@ -93,6 +97,8 @@ def insert_cuisine():
 def add_cuisine():
     return render_template('addcuisine.html')
     
+# ----------------- search by cuisine  -----------------
+
 @app.route('/search_by_cuisine')
 def search_by_cuisine():
     return render_template("searchbycuisine.html", cuisines=mongo.db.cuisines.find())

@@ -11,10 +11,12 @@
     </head>
     <body>
       <header>
+         <!-- Start the Nav bar -->
         <nav>
           <div class="nav-wrapper black">
             <a href="{{url_for('get_recipes')}}" class="brand-logo">WhatoCook</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <!-- a List of urls for current and different html pages  -->
             <ul class="right hide-on-med-and-down">
               <li><a href="{{url_for('get_recipes')}}">Home</a></li>
               <li><a href="{{url_for('search_by_cuisine')}}">Search</a></li>
@@ -32,9 +34,11 @@
       </header>
       <!-- Full width cover image div -->
         <div class="img"></div>
+        <!-- container for  block content -->
         <div class="container">
           {% block content %} {% endblock %}
         </div>
+        <!-- Footer -->
         <footer class="page-footer black">
           <div class="footer-copyright center">
             <div class="container">

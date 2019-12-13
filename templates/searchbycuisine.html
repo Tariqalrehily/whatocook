@@ -1,22 +1,24 @@
 {% extends 'base.html' %} {% block content %}
-
+<!-- form to submit a cusine by select value to post to mongo db to start searching on recipes related to that cuisine. -->
 <div class="row">
   <h3 class="center-align title-font center"> Search for a recipes for avalible cuisines</h3>
 </div>
 <div class="row">
+<!-- Start the Form -->
     <form action="{{url_for('recipes_by_cuisine')}}" method="POST">
         <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
             <select id="recipe_cuisine" name="recipe_cuisine">
                 <option value="" disabled selected>Choose cuisine</option>
+                <!-- Option to loop throgh the cuisine collections to diplay the cuurent values -->
                 {% for cuisine in cuisines %}
                  <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
                 {% endfor %}
             </select>
             </div>
         </div>
-
+        <!-- Submit button  -->
         <div class="row">
                 <button class="btn center blue lighten" type="submit" name="action" value="search">Search Recipes
                     <i class="material-icons left">search</i>
@@ -25,6 +27,7 @@
     </form>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Initialet  select  option -->
 <script>
     $(document).ready(function(){
     $('select').formSelect();

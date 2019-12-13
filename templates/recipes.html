@@ -1,9 +1,12 @@
 {% extends 'base.html' %} {% block content %}
 <h5> Recipes List</h5>
 <div class="row">
+<!-- List of recipes that are stoed in the database -->
     <ul class="collapsible" data-collapsible="accordion">
+    <!-- Loop throgh all recipes in the collection recipes -->
         {% for recipe in recipes %}
         <li>
+        <!-- Main diplay: expand more sign, recipe cuisine and food type, alos two buttons for edit and delete -->
         <div class="collapsible-header">
             <div class="col s6">
             <i class="material-icons">expand_more</i>
@@ -16,6 +19,7 @@
                  <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn_small btn blue">Edit</a>
             </div>
         </div>
+        <!-- Expnad more information about the recipe -->
         <div class="collapsible-body">
             
             <h6><strong>Recipe Name: </strong></h6><span>{{recipe.recipe_name}}</span>
