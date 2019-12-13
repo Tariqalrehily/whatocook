@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block content %}
+
+<h5> Recipes List </h5>
+<div class="row">
+    <ul class="collapsible" data-collapsible="accordion">
+        {% for recipe in search_by_cuisine %}
+            {% if recipe in recipes%}
+                <li>
+                <div class="collapsible-header">
+                    <div class="col s6">
+                    <i class="material-icons">expand_more</i>
+                    </div>
+                    <div class="recipe_header col s9">
+                        <span><strong>Cuisine: </strong></span> {{recipe.recipe_cuisine}}- <span><strong>Food Type: </strong></span>{{recipe.recipe_food_type}}
+                    </div>
+                </div>
+                <div class="collapsible-body">
+                    
+                    <h6><strong>Recipe Name: </strong></h6><span>{{recipe.recipe_name}}</span>
+                    <h6><strong>Recipe Ingredients: </strong></h6><span>{{recipe.ingredients}}</span>
+                    <h6><strong>Recipe Preparation Steps: </strong></h6><span>{{recipe.preparation_steps}}</span>
+                    <h6><strong>Recipe Required Tools: </strong></h6><span>{{recipe.required_tools}}</span>
+                    
+                </div>
+                </li>
+            { % else %}
+                <span>Sorry!</span>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

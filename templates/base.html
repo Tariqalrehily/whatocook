@@ -17,6 +17,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
               <li><a href="{{url_for('get_recipes')}}">Home</a></li>
+              <li><a href="{{url_for('search_by_cuisine')}}">Search</a></li>
               <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
               <li><a href="{{url_for('get_cuisines')}}">Manage Cuisines</a></li>
             </ul>
@@ -24,12 +25,13 @@
         </nav>
         <ul class="sidenav" id="mobile-demo">
           <li><a href="{{url_for('get_recipes')}}">Home</a></li>
+          <li><a href="{{url_for('search_by_cuisine')}}">Search</a></li>
           <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
           <li><a href="{{url_for('get_cuisines')}}">Manage Cuisines</a></li>
         </ul>
       </header>
       <!-- Full width cover image div -->
-      <div class="img"></div>
+        <div class="img"></div>
         <div class="container">
           {% block content %} {% endblock %}
         </div>
@@ -40,16 +42,18 @@
             </div>
           </div>
         </footer>
+        {% block tariq %} 
         <!-- Compiled jquery -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script type="text/javascript">
           $(document).ready(function(){
              $('.collapsible').collapsible();
-             <!-- $('select').material_select(); -->
              $('.sidenav').sidenav();
+             $('select').material_select(); 
             });
         </script>
+        {% endblock %}
     </body>
 </html>
