@@ -5,9 +5,8 @@
 <!-- List of recipes that are stoed in the database for the choosen cuisine by the user -->
     <ul class="collapsible" data-collapsible="accordion">
     <!-- Loop throght the match cuisine name -->
-        {% for recipe in search_by_cuisine %}
+        {% for recipe in search_cuisine %}
         <!-- Condifion if cusisne name match recipe cuisine -->
-            {% if recipe in recipes%}
                 <li>
                 <div class="collapsible-header">
                     <div class="col s6">
@@ -27,10 +26,6 @@
                     
                 </div>
                 </li>
-            { % else %}
-            <!-- else display message  -->
-                <span>Sorry no recipe found related to this cuisine!</span>
-            {% endif %}
         {% endfor %}
     </ul>
 </div>

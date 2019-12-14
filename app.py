@@ -4,7 +4,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 
 
-# Connect to whatocook managdb 
+# Connect to whatocook managdb
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = "whatocook"
 app.config["MONGO_URI"] = "mongodb+srv://root:Tar1010@projectdb-ddwj9.mongodb.net/whatocook?retryWrites=true&w=majority"
@@ -106,11 +106,15 @@ def search_by_cuisine():
 @app.route('/recipes_by_cuisine', methods=["POST"])
 def recipes_by_cuisine():
     recipe = mongo.db.recipes.find()
-    search = request.form.get('recipes_by_cuisine')
-    search_cuisine = mongo.db.recipes.find({"recipe_cuisine": {"name":search}})
+    search = request.form.get('recipe_cuisine')
+    #print out the search variable - see what we are getting back from the form
+    print(search)
+    search_cuisine = mongo.db.recipes.find({"recipe_cuisine": (search)})
+    #print out search_cuisine - can see if we're getting a response from mongodb
+    print(search_cuisine)
     return render_template("recipesbycuisine.html", recipe=recipe, search_cuisine=search_cuisine)
 
 if __name__ == '__main__':
-    app.run(host=os.environ.get('IP'),
-            port=int(os.environ.get('PORT', 3000)),
+    app.run(host='0.0.0.0',
+            port=(os.environ.get('PORT')),
             debug=True)
