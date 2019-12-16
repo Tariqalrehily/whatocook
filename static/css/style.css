@@ -61,7 +61,7 @@ body {
     margin-bottom: 0.5rem;
     font-weight: 500;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.8rem; 
+    font-size: 1.2rem; 
 }
 
 .recipe_header {
@@ -86,4 +86,7 @@ footer{
     max-width: 1100px;
     margin: auto;
   }
+  .list_title{
+    font-size: 1.8rem; 
+    }
 }
