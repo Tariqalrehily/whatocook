@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700');
 /*--------------------------------------------Body*/
 html, body {
   height: 100%;
@@ -9,15 +10,21 @@ body {
   padding: 0 !important;
 }
 
+/*--------------------------------------------color*/
+.img > span {
+    color: #fff;
+    background-color: #000;
+}
+
+.btn_small:hover {
+    background-color: #000 !important;
+}
+
 /*--------------------------------------------Header*/
 /* whatocook logo */
 .brand-logo {
   margin-left: 10px;
   font-size: 15px; 
-}
-
-.recipe_header {
-  margin-top: 5px;
 }
 
 /*--------------------------------------------Cover image*/
@@ -31,15 +38,44 @@ body {
   position: relative;
 }
 
+.img > span {
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 10px 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+/*--------------------------------------------Wrapper content*/
+
+.wrapper{
+    min-height: 40%;
+    margin-top: 3em;
+}
+
+.list_title{
+    margin-bottom: 2em;
+}
+
+.recipe_header {
+  margin-top: 5px;
+}
+
  /*--------------------------------------------btn style*/
 
 .btn_small {
   margin: 3px;
 }
-.btn_small:hover {
-    background-color: #000 !important;
-}
 
+/*--------------------------------------------footer*/
+
+footer{
+    margin-top: 3em;
+}
 /*--------------------------------------------Media Queries*/
 
 @media(min-width: 992px) {
