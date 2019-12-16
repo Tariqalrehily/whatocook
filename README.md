@@ -15,6 +15,7 @@ The application provide users with ability to update the recipes on later stage.
 
 whatocook application is built as part of code institute Milestone project.
 
+Go to Live site [whatocook link](https://whatocook.herokuapp.com/)
 # The UX:
 ## The UX design:
 The app has two primary type of users: user who wish to store a new cooking recipe and a user who wish to search for a recipe.
@@ -145,9 +146,6 @@ $ git push -u origin master
 
 * After, I will do this to commit and push my projects changes and keep my GitHub repository up to date.
 
-### Deploy on heroku to publish the site:
-
-
 ### From Github:
 * To run this one page app locally:
 1. On GitHub, navigate to the main page of the repository.
@@ -158,7 +156,13 @@ $ git push -u origin master
 6. Type git clone, and then paste the URL you copied in Step 2. URL (https://github.com/Tariqalrehily/whatocook)
 7. Press Enter. Your local clone will be created.
 
-### To heroku:
+### Deploy To Heroku:
+There are four things needed in order to push our code to Heroku.
+1. Create a requirements.txt file, which contains a list of our dependencies.
+2. Create a Procfile, which tells Heroku how to run our project. By adding web: python app.py to the file and including it in our deployment
+3. Created a Heroku whatocook app.
+4. Linked the local Git repository to Heroku. 
+5. Choose bransh (master) and start depolying. [whatocook link](https://whatocook.herokuapp.com/)
 
 ## Credit:
 1. Center content (e.g logo, footer): from [W3.org](https://www.w3.org/Style/Examples/007/center.en.html)

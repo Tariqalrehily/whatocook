@@ -58,7 +58,10 @@ body {
 }
 
 .list_title{
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem; 
 }
 
 .recipe_header {

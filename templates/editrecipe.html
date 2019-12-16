@@ -1,6 +1,6 @@
 {% extends 'base.html'%} {% block content %}
 
-<h3>Edit Recipe</h3>
+<h3 class="list_title">Edit Recipe</h3>
 <div class="row">
 <!-- Form so that user can start editting the selected form, to Post the editing information back to the mongo collection recipes -->
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">

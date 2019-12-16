@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h3> Edit Cuisine </h3>
+<h3 class="list_title"> Edit Cuisine </h3>
 <div class="row">
 <!-- Form to route the user to the cusine to start editting the cusine name -->
     <form action="{{ url_for('update_cuisine', cuisine_id=cuisine._id) }}" method="POST" class="col s12">
