@@ -23,22 +23,22 @@
       <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">mode_edit</i>
-            <textarea name="ingredients" id="ingredients" class="materialize-textarea" value="{{recipe.ingredients}}"></textarea>
-            <label for="icon_telephone">ingredients</label>
+            <textarea name="ingredients" id="ingredients" class="materialize-textarea"></textarea>
+            <!-- <label for="ingredients">ingredients</label> -->
             </div>
       </div>
       <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">mode_edit</i>
-            <textarea name="preparation_steps" id="preparation_steps" class="materialize-textarea" value="{{recipe.preparation_steps}}"></textarea>
-            <label for="icon_telephone">preparation_steps</label>
+            <textarea name="preparation_steps" id="preparation_steps" class="materialize-textarea"></textarea>
+            <!-- <label for="preparation_steps">preparation_steps</label> -->
             </div>
       </div>
       <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">mode_edit</i>
-            <textarea name="required_tools" id="required_tools" class="materialize-textarea" value="{{recipe.required_tools}}"></textarea>
-            <label for="icon_telephone">required_tools</label>
+            <textarea name="required_tools" id="required_tools" class="materialize-textarea"></textarea>
+            <!-- <label for="required_tools">required_tools</label> -->
             </div>
       </div>
       <!-- Form submit button -->
@@ -49,4 +49,16 @@
         </div>
     </form>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Retrieve the textarea fields -->
+<script>
+    $(document).ready(function(){
+    $('#ingredients').val('{{recipe.ingredients}}');
+    M.textareaAutoResize($('#ingredients'));
+    $('#preparation_steps').val('{{recipe.preparation_steps}}');
+    M.textareaAutoResize($('#preparation_steps'));
+    $('#required_tools').val('{{recipe.required_tools}}');
+    M.textareaAutoResize($('#required_tools'));
+  });
+</script>
 {% endblock %}
