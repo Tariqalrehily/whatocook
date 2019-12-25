@@ -77,16 +77,26 @@ Each recipe has two buttons: Delete in red color and Edit in blue color.
 * I have tried and friends by using different devices and screens (see devices below) to add more than one recipe and it works and were added to the whatocook database collection recipes without any error.
 
 ### Edit a recipe:
-* I have tried and friends by using different devices and screens to edit a recipe by changing it recipe name and re save it to the database and it's been updated in the data base without any error.
-
+* I have tried and friends by using different devices and screens to edit a recipe by changing it recipes and re save it to the database, a friend point out the data was not retrieving from the database, which are: Ingredients,
+Preparation Steps and Required Tools. This we resolved by adding recipes collection and field name: 
+```
+{{recipe.ingredients}}
+{{recipe.preparation_steps}}
+{{recipe.required_tools}}
+```
+Also, redirect to get_recipes was not working. Deitals below in the (Redirect after Adding Editing and Deleting).
 ### Delete a recipe:
-* I tried  and friends by using different devices and screens to delete a recipe from the database and delete a cuisine and it was deleted from the database collections with no error.
+* I tried  and friends by using different devices and screens to delete a recipe from the database and delete a cuisine and it was deleted from the database collections with no error, but redirect to get_recipes was not working. 
+Deitals below in the (Redirect after Adding Editing and Deleting).
 
 ### Search for recipe:
-* I have tried and friends by using different devices and screens (see devices below) to search for more than one recipe by it's cuisines.Search function did not display match list of recipes. Found mismatch in search_cuisine vs search_by_cuisine in recipebycuisine.html {% for recipe in search_cuisine %}. Also have added print() to print the search out come. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully.
+* I have tried and friends by using different devices and screens (see devices below) to search for more than one recipe by it's cuisines.Search function did not display match list of recipes. 
+Found mismatch in search_cuisine vs search_by_cuisine in recipebycuisine.html {% for recipe in search_cuisine %}.
+ Also have added print() to print the search out come. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully.
 
 ### Redirect after Adding Editing and Deleting:
-* After were a recipe / cuisine added editied or deleted, the app was not redirect to get_recipe page, insted was showing error (the site can't be reached) - bug fixed: re-set host to 0.0.0.0 and remove PORT 3000 for redirects to work. Tested by Edit a recipe, and the app successfully redirected to get_recipe page (Main page).
+* After were a recipe / cuisine added editied or deleted, the app was not redirect to get_recipe page, insted was showing error (the site can't be reached) - bug fixed: re-set host to 0.0.0.0 and remove PORT 3000 for redirects to work. 
+Tested by Edit a recipe, and the app successfully redirected to get_recipe page (Main page).
 ```
 if __name__ == '__main__':
     app.run(host='0.0.0.0',
@@ -94,7 +104,8 @@ if __name__ == '__main__':
             debug=True)
 ```
 ### Full width background and about:
-Background was giving 100% width, and the text was centre by using flex box. By giving relative position to the background and absolute position to the text, text is responsive at the centre of the background image across all screen sizes. This was tested by testing it on different screen sizes.
+Background was giving 100% width, and the text was centre by using flex box. By giving relative position to the background and absolute position to the text, text is responsive at the centre of the background image across all screen sizes. 
+This was tested by testing it on different screen sizes.
 
 ### Devices Tested:
 * Galaxy s5
