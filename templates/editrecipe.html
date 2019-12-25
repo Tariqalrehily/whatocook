@@ -8,6 +8,17 @@
         <!-- belw are other information stored about the recipe so that user can also edit any recipe information. -->
         <div class="row">
             <div class="input-field col s12">
+            <i class="material-icons prefix">poll</i>
+            <select id="recipe_cuisine" name="recipe_cuisine">
+                <!-- Option to loop throgh the cuisine collections to diplay the cuurent values -->
+                {% for cuisine in cuisines %}
+                 <option id="recipe_cuisine" name="recipe_cuisine" type="text" value="{{cuisine.cuisine_name}}" selected>{{cuisine.cuisine_name}}</option>
+                {% endfor %}
+            </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
             <input id="recipe_food_type" name="recipe_food_type" type="text" class="validate" value="{{recipe.recipe_food_type}}">
             <label for="icon_prefix">Recipe Food Type, Example: Burger</label>
@@ -52,4 +63,11 @@
         </div>
     </form>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Initialet  select  option -->
+<script>
+    $(document).ready(function(){
+    $('select').formSelect();
+  });
+</script>
 {% endblock %}
