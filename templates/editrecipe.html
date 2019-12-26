@@ -9,12 +9,8 @@
         <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
-            <select id="recipe_cuisine" name="recipe_cuisine">
-                <!-- Option to loop throgh the cuisine collections to diplay the cuurent values -->
-                {% for cuisine in cuisines %}
-                 <option id="recipe_cuisine" name="recipe_cuisine" type="text" value="{{cuisine.cuisine_name}}" selected>{{cuisine.cuisine_name}}</option>
-                {% endfor %}
-            </select>
+            <input id="recipe_cuisine" name="recipe_cuisine" type="text" class="validate" value="{{recipe.recipe_cuisine}}">
+            <label for="icon_prefix">Cuisine Name</label>
             </div>
         </div>
         <div class="row">
