@@ -44,8 +44,8 @@ def update_recipe(recipe_id):
     recipes = mongo.db.recipes
     recipes.update( {'_id': ObjectId(recipe_id)},
     {
-        'recipe_cuisine':request.form.get('recipe_cuisine'),
-        'recipe_food_type':request.form.get('recipe_food_type'),
+        'recipe_cuisine':request.form.get('recipe_cuisine').upper(),
+        'recipe_food_type':request.form.get('recipe_food_type').upper(),
         'recipe_name':request.form.get('recipe_name'),
         'ingredients': request.form.get('ingredients'),
         'preparation_steps': request.form.get('preparation_steps'),
@@ -83,7 +83,7 @@ def edit_cuisine(cuisine_id):
 def update_cuisine(cuisine_id):
     mongo.db.cuisines.update(
         {'_id': ObjectId(cuisine_id)},
-        {'cuisine_name': request.form.get('cuisine_name')})
+        {'cuisine_name': request.form.get('cuisine_name').upper()})
     return redirect(url_for('get_cuisines'))
 
 
