@@ -4,7 +4,7 @@ whatocook is a web application for cooking recipes. Is prefect for store and sea
 
 The application provide users with ability to update the recipes on later stage. Each recipe can be edited or deleted by navigate to the recipe and click edit button to start updating or delete button to delete the recipe from the database. Also, this application provide a search function that will allow users to search for a recipes. Currently, the whatocook provide search function for recipes by the recipe's cuisines. Should you as a user wishing to cook a French meal for dinner, you can select search for recipes by French cuisine, and a list for all available French cuisine recipes there to pick one.
 
-## Each recipe will have a list of information as follow:
+Each recipe will have a list of information as follow:
 
 * Recipe cuisine
 * Recipe food Type
@@ -17,23 +17,23 @@ whatocook application is built as part of code institute Milestone project.
 
 Go to Live site [whatocook link](https://whatocook.herokuapp.com/)
 # The UX:
-## The UX design:
+## The UX design
 The app has two primary type of users: user who wish to store a new cooking recipe and a user who wish to search for a recipe.
 
 [Wireframe mockups](https://github.com/Tariqalrehily/whatocook/blob/master/Wireframe_mockups.pdf)
 
-### User adding a new recipe:
+### User adding a new recipe
 * I want to be able to store a new recipe, as such I can navigate to the top right of the home page to find in the Nav bar a Add recipe link to link to a new page for adding a new recipe by filling a form inputs for the recipe and when I finish, I can hit the Add Recipe green button at the end on add recipe html page to add the recipe, and the user will be redirected to the home page.
 * I want to enter the recipe information. The user can do so, by selecting a cuisine, enter a recipe name, enter recipe name, enter ingredients in test area, enter preparation steps, and enter the recipe required tools in the text area.
 * When the user wish to modify a recipe, edit function added to help the user to edit and update the recipe. Beside each recipe in the recipe list on the home page under the cover photo, the user will find a list of all recipes in whatocook app linked database, an Edit button added to  route the suer to a new html page to edit the wishing recipe's input fields and hit the Edit Recipe blue button at the end of the html page and the user also will be redirected to the home page.
 * For user convenient, a delete button also added in red color beside the edit blue button, should the user wish to delete the recipe on later stage.
 
-### User searching for a recipe:
+### User searching for a recipe
 * I want to select a cuisine to start my search about that cuisine recipes. A search link at the top right of the home page a  in the Nav bar provided to start searching. This link is linked to a new html page. The search page currently only has one search function available, it's search by cuisine. On the page under the cover photo, a Select menu provided.the Select menu continue a list of cusuines.
 * I want my search results. When the user select a cusine, he/she can start the search by clicking on the search recipes blue button under the select menu. After, the user will be taking to a new html page menu which will be listing all recipes related to that cuisine.
 * I want to see the recipe to start cooking. The user can click on the wishing recipe block, to have all recipes information.
 
-## Wireframe mockups:
+## Wireframe mockups
 I used Sketch software for Wireframe mockups, as follow:
 
 * First page:  Mobile and Tablet Screens.
@@ -41,7 +41,7 @@ I used Sketch software for Wireframe mockups, as follow:
 
 [Wireframe mockups](https://github.com/Tariqalrehily/whatocook/blob/master/Wireframe_mockups.pdf)
 
-## Features:
+## Features
 
 * The primary feature of this application, is to find, add, edit, and delete a cooking recipes. The home page has the following links:
 Home page link in Home Nav bar and whatocook logo.
@@ -56,11 +56,11 @@ Each recipe has two buttons: Delete in red color and Edit in blue color.
 
 * The app has 9 html pages to fill the user needs to search, add, edit, and delete a cooking recipes.
 
-## Features Left To Implement:
+## Features Left To Implement
 * More search options to search for recipes, for example search by recipe food type.
 * User authentication to edit and delete recipes, only the user who added the recipe can edit and delete that recipe.
 
-## Technologies Used:
+## Technologies Used
 * HTML5
 * CSS3
 * Materialize
@@ -73,10 +73,10 @@ Each recipe has two buttons: Delete in red color and Edit in blue color.
 
 ## Testing
 
-### Store (Add) a recipe:
+### Store (Add) a recipe
 * I have tried and friends by using different devices and screens (see devices below) to add more than one recipe and it works and were added to the whatocook database collection recipes without any error.
 
-### Edit a recipe:
+### Edit a recipe
 * I have tried and friends by using different devices and screens to edit a recipe by changing it recipes and re save it to the database, a friend point out the data was not retrieving from the database, which are: Ingredients,
 Preparation Steps and Required Tools. This we resolved by adding recipes collection and field name: 
 ```
@@ -85,16 +85,16 @@ Preparation Steps and Required Tools. This we resolved by adding recipes collect
 {{recipe.required_tools}}
 ```
 Also, redirect to get_recipes was not working. Deitals below in the (Redirect after Adding Editing and Deleting).
-### Delete a recipe:
+### Delete a recipe
 * I tried  and friends by using different devices and screens to delete a recipe from the database and delete a cuisine and it was deleted from the database collections with no error, but redirect to get_recipes was not working. 
 Deitals below in the (Redirect after Adding Editing and Deleting).
 
-### Search for recipe:
+### Search for recipe
 * I have tried and friends by using different devices and screens (see devices below) to search for more than one recipe by it's cuisines.Search function did not display match list of recipes. 
 Found mismatch in search_cuisine vs search_by_cuisine in recipebycuisine.html {% for recipe in search_cuisine %}.
  Also have added print() to print the search out come. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully.
 
-### Redirect after Adding Editing and Deleting:
+### Redirect after Adding Editing and Deleting
 * After were a recipe / cuisine added editied or deleted, the app was not redirect to get_recipe page, insted was showing error (the site can't be reached) - bug fixed: re-set host to 0.0.0.0 and remove PORT 3000 for redirects to work. 
 Tested by Edit a recipe, and the app successfully redirected to get_recipe page (Main page).
 ```
@@ -103,11 +103,11 @@ if __name__ == '__main__':
             port=(os.environ.get('PORT')),
             debug=True)
 ```
-### Full width background and about:
+### Full width background and about
 Background was giving 100% width, and the text was centre by using flex box. By giving relative position to the background and absolute position to the text, text is responsive at the centre of the background image across all screen sizes. 
 This was tested by testing it on different screen sizes.
 
-### Devices Tested:
+### Devices Tested
 * Galaxy s5
 * iPhone 6/7/8
 * iPhone 6/7/8 Plus
@@ -117,7 +117,7 @@ This was tested by testing it on different screen sizes.
 
 * Browsers: Chrome, Safari, Firefox, and Microsoft Edge. Also, Chrome Dev Tools: I used Chrome Tools to run test my code and debugging it through out the coding and building the application. Also, try texting different screen sizes.
 
-### Code validator:
+### Code validator
 * HTML: I ran html code on w3 html validator:
 1. Warning: Consider adding a lang attribute to the html start tag to declare the language of this document. Been modified accordingly.
 2. Error: Bad value {{url_for('static',filename='css/style.css')}} for attribute href on element link: Illegal character in path segment: { is not allowed.
@@ -129,7 +129,7 @@ This was tested by testing it on different screen sizes.
 
 ## Deployment
 
-### To Github:
+### To Github
 1. Create a new repository on GitHub. To avoid errors, I did not initialize the new repository with README, license, or gitignore files. I added these files after my project has been pushed to GitHub.
 2. Open Terminal on MacBook Pro.
 3. Change the current working directory to my local project.
@@ -157,7 +157,7 @@ $ git push -u origin master
 
 * After, I will do this to commit and push my projects changes and keep my GitHub repository up to date.
 
-### From Github:
+### From Github
 * To run this one page app locally:
 1. On GitHub, navigate to the main page of the repository.
 2. Under the repository name, click Clone or download.
@@ -167,23 +167,23 @@ $ git push -u origin master
 6. Type git clone, and then paste the URL you copied in Step 2. URL (https://github.com/Tariqalrehily/whatocook)
 7. Press Enter. Your local clone will be created.
 
-### Deploy To Heroku:
+### Deploy To Heroku
 There are four things needed in order to push our code to Heroku.
 1. Create a requirements.txt file, which contains a list of our dependencies.
 2. Create a Procfile, which tells Heroku how to run our project. By adding web: python app.py to the file and including it in our deployment
 3. Created a Heroku whatocook app.
-4. Linked the local Git repository to Heroku. 
+4. Linked the local Git repository to Heroku to enable auto deployment. 
 5. Choose bransh (master) and start depolying. [whatocook link](https://whatocook.herokuapp.com/)
 
-## Credit:
+## Credit
 1. Center content (e.g logo, footer): from [W3.org](https://www.w3.org/Style/Examples/007/center.en.html)
 2. Picking colors values: from [htmlcolorcodes.com](https://htmlcolorcodes.com/color-picker/)
 
-## Media:
+## Media
 1. Background image: from Pexels.com by [Pixabay](https://www.pexels.com/photo/blaze-blue-blur-bright-266896/)
 
-## Acknowledgement:
+## Acknowledgement
 * To my mentor Anthony Ngene provided me guides and the Tutor team for their help and advises.
 
-## Disclaimer:
+## Disclaimer
 * The materials on this application is currently for educational and entertainment purposes only.  
