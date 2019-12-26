@@ -84,6 +84,7 @@ Preparation Steps and Required Tools. This we resolved by adding recipes collect
 {{recipe.preparation_steps}}
 {{recipe.required_tools}}
 ```
+In addtion of cuisine was return null value, this was fixed by disbley the cuisine as readonly, as user won't need to edit the cuisine. 
 Also, redirect to get_recipes was not working. Deitals below in the (Redirect after Adding Editing and Deleting).
 ### Delete a recipe
 * I tried  and friends by using different devices and screens to delete a recipe from the database and delete a cuisine and it was deleted from the database collections with no error, but redirect to get_recipes was not working. 
@@ -91,8 +92,9 @@ Deitals below in the (Redirect after Adding Editing and Deleting).
 
 ### Search for recipe
 * I have tried and friends by using different devices and screens (see devices below) to search for more than one recipe by it's cuisines.Search function did not display match list of recipes. 
-Found mismatch in search_cuisine vs search_by_cuisine in recipebycuisine.html {% for recipe in search_cuisine %}.
- Also have added print() to print the search out come. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully.
+Found mismatch in search_cuisine vs search_by_cuisine in recipebycuisine.html {% for recipe in search_cuisine %}. 
+For user convenient, upper method was added when cuisine is added to match search input.
+Also have added print() to print the search out come. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully.
 
 ### Redirect after Adding Editing and Deleting
 * After were a recipe / cuisine added editied or deleted, the app was not redirect to get_recipe page, insted was showing error (the site can't be reached) - bug fixed: re-set host to 0.0.0.0 and remove PORT 3000 for redirects to work. 
