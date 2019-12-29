@@ -103,7 +103,8 @@ def add_cuisine():
 
 @app.route('/search_by_cuisine')
 def search_by_cuisine():
-    return render_template("searchbycuisine.html", cuisines=mongo.db.cuisines.find())
+    return render_template("search.html", cuisines=mongo.db.cuisines.find())
+
 
 @app.route('/recipes_by_cuisine', methods=["POST"])
 def recipes_by_cuisine():
@@ -115,6 +116,20 @@ def recipes_by_cuisine():
     #print out search_cuisine - can see if we're getting a response from mongodb
     print(search_cuisine)
     return render_template("recipesbycuisine.html", recipe=recipe, search_cuisine=search_cuisine)
+
+# ----------------- search by recipe  -----------------
+
+@app.route('/recipes_by_name', methods=["POST"])
+def recipes_by_name():
+    recipe = mongo.db.recipes.find()
+    search = request.form.get('recipe_name')
+    #print out the search variable - see what we are getting back from the form
+    print(search)
+    search_names = mongo.db.recipes.find({"recipe_name": (search)})
+    #print out search_cuisine - can see if we're getting a response from mongodb
+    print(search_names)
+    return render_template("recipesbyname.html", recipe=recipe, search_names=search_names)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',

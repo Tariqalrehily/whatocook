@@ -1,12 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 <!-- form to submit a cusine by select value to post to mongo db to start searching on recipes related to that cuisine. -->
 <div class="row">
-  <h3 class="list_title"> Search for recipes from a particular cuisine</h3>
+  <h3 class="list_title"> Search for recipes by it name:</h3>
 </div>
 <div class="row">
 <!-- Start the Form -->
+    <form action="{{url_for('recipes_by_name')}}" method="POST">
+        <div class="row">
+         <!-- Search recipes by recipes' name -->
+            <div class="input-field col s12">
+            <i class="material-icons prefix">assignment</i>
+            <input id="recipe_name" name="recipe_name" type="text" class="validate">
+            <label for="icon_prefix">Recipe Name</label>
+            </div>
+        </div>
+         <!-- Submit button  -->
+        <div class="row">
+                <button class="btn center blue lighten" type="submit" name="action" value="search">Search Recipes
+                    <i class="material-icons left">search</i>
+                </button>
+        </div>
+    </form>
+
+    <br />
+
+    <div class="row">
+        <h3 class="list_title"> Search for recipes from a particular cuisine:</h3>
+    </div>
     <form action="{{url_for('recipes_by_cuisine')}}" method="POST">
         <div class="row">
+            <!-- Search recipes by Cuisines -->
             <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
             <select id="recipe_cuisine" name="recipe_cuisine">
