@@ -28,7 +28,14 @@
                     <h6><strong>Recipe Ingredients </strong></h6><span>{{recipe.ingredients}}</span>
                     <h6><strong>Recipe Preparation Steps </strong></h6><span>{{recipe.preparation_steps}}</span>
                     <h6><strong>Recipe Required Tools </strong></h6><span>{{recipe.required_tools}}</span>
-                    
+                    <hr>
+                    <div class="row">
+                        <div class="col s12 m6 center"><span>Would you like to Edit or Delete this recipe?</span></div>
+                        <div class="col s12 m6 center">
+                            <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn_small btn blue">Edit</a>
+                            <a href="{{url_for('delete_recipe', recipe_id=recipe._id)}}" class="waves-effect waves-light btn_small btn red">Delete</a>
+                        </div>
+                    </div>
                 </div>
                 </li>
         {% endfor %}
