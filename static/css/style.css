@@ -22,7 +22,7 @@ body {
   font-size: 15px; 
 }
 
-/*--------------------------------------------Cover image*/
+/*-------------------------------------------- images */
 
 .img{
   width: 100%;
@@ -45,6 +45,14 @@ body {
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
+.recipe_first_img {
+    height:100%;
+    width:100%;
+}
+.recipe_img {
+    height:30%;
+    width:70%;
+}
 /*--------------------------------------------Wrapper content*/
 
 .wrapper{
@@ -53,15 +61,12 @@ body {
 }
 
 .list_title{
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
     font-weight: 500;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.2rem; 
 }
 
-.recipe_header {
-  margin-top: 5px;
-}
 
  /*--------------------------------------------btn style*/
 
@@ -86,3 +91,4 @@ footer{
     font-size: 1.8rem; 
     }
 }
+

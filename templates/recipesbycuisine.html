@@ -14,7 +14,7 @@
                     </div>
                      <!-- image div -->
                     <div class="col s6">
-                        <img src="{{recipe.image}}" alt="{{recipe.image}}" height="100" width="100">
+                        <img class="recipe_first_img" src="{{recipe.image}}" alt="{{recipe.image}}">
                     </div>
                     <!-- recipe information -->
                     <div class="recipe_header col s9">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="collapsible-body">
                 
-                    <img src="{{recipe.image}}" alt="{{recipe.recipe_name}}" height="300" width="500">
+                    <img class="recipe_img" src="{{recipe.image}}" alt="{{recipe.recipe_name}}">
                     <h6><strong>Recipe Name </strong></h6><span>{{recipe.recipe_name}}</span>
                     <h6><strong>Recipe Ingredients </strong></h6><span>{{recipe.ingredients}}</span>
                     <h6><strong>Recipe Preparation Steps </strong></h6><span>{{recipe.preparation_steps}}</span>
