@@ -9,7 +9,7 @@
         <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">poll</i>
-            <input id="recipe_cuisine" name="recipe_cuisine" type="text" class="validate" value="{{recipe.recipe_cuisine}}" readonly>
+            <input id="recipe_cuisine" name="recipe_cuisine" type="text" class="validate" value="{{recipe.recipe_cuisine}}">
             <label for="icon_prefix">Cuisine Name</label>
             </div>
         </div>
@@ -47,6 +47,13 @@
             <textarea name="required_tools" id="required_tools" class="materialize-textarea" vlaue="{{recipe.required_tools}}">{{recipe.required_tools}}</textarea>
             <label for="icon_telephone">Required Tools</label>
             </div>
+      </div>
+       <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">photo</i>
+          <input id="image" name="image" type="text" class="validate" value="{{recipe.image}}">
+          <label for="icon_prefix">Recipe Image URL</label>
+        </div>
       </div>
       <!-- Form submit button -->
         <div class="row">

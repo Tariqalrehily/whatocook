@@ -2,13 +2,13 @@ import os
 from flask import Flask, render_template, redirect, request, url_for, request
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-
+from dotenv import load_dotenv
+load_dotenv()
 
 # Connect to whatocook managdb
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = "whatocook"
-app.config["MONGO_URI"] = "mongodb+srv://root:Tar1010@projectdb-ddwj9.mongodb.net/whatocook?retryWrites=true&w=majority"
-
+app.config["MONGO_URI"] = os.environ.get('MONGO_URI')
 mongo = PyMongo(app)
 
 @app.route('/')
@@ -49,7 +49,8 @@ def update_recipe(recipe_id):
         'recipe_name':request.form.get('recipe_name'),
         'ingredients': request.form.get('ingredients'),
         'preparation_steps': request.form.get('preparation_steps'),
-        'required_tools':request.form.get('required_tools')
+        'required_tools':request.form.get('required_tools'),
+        'image':request.form.get('image')
     })
     
     return redirect(url_for('get_recipes'))

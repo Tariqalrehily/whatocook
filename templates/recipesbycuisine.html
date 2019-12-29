@@ -12,6 +12,10 @@
                     <div class="col s6">
                     <i class="material-icons">expand_more</i>
                     </div>
+                     <!-- image div -->
+                    <div class="col s6">
+                        <img src="{{recipe.image}}" alt="{{recipe.image}}" height="100" width="100">
+                    </div>
                     <!-- recipe information -->
                     <div class="recipe_header col s9">
                         <span><strong>Cuisine: </strong></span> {{recipe.recipe_cuisine}}<span><br><strong>Food Type: </strong></span>{{recipe.recipe_food_type}}
@@ -19,6 +23,7 @@
                 </div>
                 <div class="collapsible-body">
                 
+                    <img src="{{recipe.image}}" alt="{{recipe.recipe_name}}" height="300" width="500">
                     <h6><strong>Recipe Name </strong></h6><span>{{recipe.recipe_name}}</span>
                     <h6><strong>Recipe Ingredients </strong></h6><span>{{recipe.ingredients}}</span>
                     <h6><strong>Recipe Preparation Steps </strong></h6><span>{{recipe.preparation_steps}}</span>

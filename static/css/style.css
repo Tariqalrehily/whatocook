@@ -11,11 +11,6 @@ body {
 }
 
 /*--------------------------------------------color*/
-.img > span {
-    color: #fff;
-    background-color: #000;
-}
-
 .btn_small:hover {
     background-color: #000 !important;
 }

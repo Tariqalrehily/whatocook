@@ -13,11 +13,11 @@
       <header>
          <!-- Start the Nav bar -->
         <nav>
-          <div class="nav-wrapper black">
+          <div class="nav-wrapper grey">
             <a href="{{url_for('get_recipes')}}" class="brand-logo">WhatoCook</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <!-- a List of urls for current and different html pages  -->
-            <ul class="right hide-on-med-and-down">
+            <ul class="right hide-on-med-and-down waves-effect waves-light grey">
               <li><a href="{{url_for('get_recipes')}}">Home</a></li>
               <li><a href="{{url_for('search_by_cuisine')}}">Search</a></li>
               <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
@@ -34,7 +34,7 @@
       </header>
       <!-- Full width cover image div -->
         <div class="img">
-            <span class=""> Store your recipes or search for one and enjoy cooking! </span>
+            <span class="white-text text-darken-2 card-panel grey"> Store your recipes or search for one and enjoy cooking! </span>
         </div>
         <!-- container for  block content -->
         <div class="container wrapper">
@@ -43,14 +43,13 @@
             </div>  
         </div>
         <!-- Footer -->
-        <footer class="page-footer black">
+        <footer class="page-footer grey">
           <div class="footer-copyright center">
             <div class="container">
             © 2019 T.AlRehily
             </div>
           </div>
         </footer>
-        {% block tariq %} 
         <!-- Compiled jquery -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <!-- Compiled and minified JavaScript -->
@@ -59,9 +58,8 @@
           $(document).ready(function(){
              $('.collapsible').collapsible();
              $('.sidenav').sidenav();
-             $('select').material_select(); 
+             $('select').formSelect(); 
             });
         </script>
-        {% endblock %}
     </body>
 </html>
