@@ -6,13 +6,20 @@
     <form action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
 
         <!-- belw are other information stored about the recipe so that user can also edit any recipe information. -->
-        <div class="row">
-            <div class="input-field col s12">
-            <i class="material-icons prefix">poll</i>
-            <input id="recipe_cuisine" name="recipe_cuisine" type="text" class="validate" value="{{recipe.recipe_cuisine}}">
-            <label for="icon_prefix">Cuisine Name</label>
-            </div>
-        </div>
+        <!-- cuisines selection -->
+        <div class="input-field col s12">
+          <i class="material-icons prefix">poll</i>
+          <select id="recipe_cuisine" name="recipe_cuisine">
+            <option value="{recipe.recipe_cuisine}}" disabled selected>{{recipe.recipe_cuisine}}</option>
+            <!-- loop throgh the cusines name that are currently stored in the data base, user has to go to manage cusisnes link to add a cusisen, 
+                  in the recipe add page user can only select from the stored cusisines.  -->
+            {% for cuisine in cuisines %}
+              <option value="{{cuisine.cuisine_name}}">{{cuisine.cuisine_name}}</option>
+            {% endfor %}
+          </select>
+          <label>Recipe Cuisine</label>
+          </div>
+          <!-- End cuisines selection -->
         <div class="row">
             <div class="input-field col s12">
             <i class="material-icons prefix">assignment</i>
