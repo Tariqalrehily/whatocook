@@ -46,8 +46,8 @@ body {
     transform: translate(-50%, -50%);
 }
 .recipe_first_img {
-    height:50%;
-    width:50%;
+    height:60px;
+    width:80px;
 }
 .recipe_img {
     height:30%;
@@ -89,6 +89,10 @@ footer{
   }
   .list_title{
     font-size: 1.8rem; 
+    }
+    .recipe_first_img {
+    height:100px;
+    width:120px;
     }
 }
 
