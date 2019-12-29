@@ -10,7 +10,7 @@
         <div class="input-field col s12">
           <i class="material-icons prefix">poll</i>
           <select id="recipe_cuisine" name="recipe_cuisine">
-            <option value="{recipe.recipe_cuisine}}" disabled selected>{{recipe.recipe_cuisine}}</option>
+            <option value="{{recipe.recipe_cuisine}}" selected>{{recipe.recipe_cuisine}}</option>
             <!-- loop throgh the cusines name that are currently stored in the data base, user has to go to manage cusisnes link to add a cusisen, 
                   in the recipe add page user can only select from the stored cusisines.  -->
             {% for cuisine in cuisines %}
