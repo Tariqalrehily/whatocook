@@ -108,7 +108,7 @@ Deitals below in the (Redirect after Adding Editing and Deleting).
 * I have tried and friends by using different devices and screens (see devices below) to search for more than one recipe by it's cuisines or recipes name, search function did not display match list of recipes when search by cuisine.
 Found mismatch in search_cuisine vs search_by_cuisine in recipebycuisine.html {% for recipe in search_cuisine %}. 
 For user convenient, upper method was added when cuisine is added to match search input.
-Also have added print() to print the search out come. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully. Aslo, by recipes name, and it was listed successfully.
+Also have added print() to print the search out come., which is been removed from the code later. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully. Aslo, by recipes name, and it was listed successfully.
 
 ### Redirect after Adding Editing and Deleting
 * After were a recipe / cuisine added editied or deleted, the app was not redirect to get_recipe page, insted was showing error (the site can't be reached) - bug fixed: re-set host to 0.0.0.0 and remove PORT 3000 for redirects to work. 
