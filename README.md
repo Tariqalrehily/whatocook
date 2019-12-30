@@ -1,8 +1,13 @@
 # whatocook
 
-whatocook is a web application for cooking recipes. Is prefect for store and search for cooking recipes for daily meals. Users will have the ability to easy add a new recipes by filling recipes form inputs. After storing the recipe with whatocook web application, you can re-visit the app anytime to find that recipe and start cooking to enjoy a nice meal.
+whatocook is a web application for cooking recipes. Is prefect for store and search for cooking recipes for daily meals. Users will have the ability to easy add 
+a new recipes by filling recipes form inputs. After storing the recipe with whatocook web application, you can re-visit the app anytime to find that recipe and 
+start cooking to enjoy a nice meal.
 
-The application provide users with ability to update the recipes on later stage. Each recipe can be edited or deleted by navigate to the recipe and click edit button to start updating or delete button to delete the recipe from the database. Also, this application provide a search function that will allow users to search for a recipes. Currently, the whatocook provide search function for recipes by the recipe's cuisines. Should you as a user wishing to cook a French meal for dinner, you can select search for recipes by French cuisine, and a list for all available French cuisine recipes there to pick one.
+The application provide users with ability to update the recipes on later stage. Each recipe can be edited or deleted by navigate to the recipe and click edit 
+button to start updating or delete button to delete the recipe from the database. Also, this application provide a search function that will allow users to 
+search for a recipes. Currently, the whatocook provide search function for recipes by the recipe's cuisines and by the recipes' name. Should you as a user 
+wishing to cook a French meal for dinner, you can select search for recipes by French cuisine, and a list for all available French cuisine recipes there to pick one.
 
 Each recipe will have a list of information as follow:
 
@@ -12,25 +17,34 @@ Each recipe will have a list of information as follow:
 * Ingredients
 * Recipe steps
 * Required Tools
+* Recipe Image
 
 whatocook application is built as part of code institute Milestone project.
 
 Go to Live site [whatocook link](https://whatocook.herokuapp.com/)
-# The UX:
+
+# The UX
 ## The UX design
 The app has two primary type of users: user who wish to store a new cooking recipe and a user who wish to search for a recipe.
 
 [Wireframe mockups](https://github.com/Tariqalrehily/whatocook/blob/master/Wireframe_mockups.pdf)
 
 ### User adding a new recipe
-* I want to be able to store a new recipe, as such I can navigate to the top right of the home page to find in the Nav bar a Add recipe link to link to a new page for adding a new recipe by filling a form inputs for the recipe and when I finish, I can hit the Add Recipe green button at the end on add recipe html page to add the recipe, and the user will be redirected to the home page.
-* I want to enter the recipe information. The user can do so, by selecting a cuisine, enter a recipe name, enter recipe name, enter ingredients in test area, enter preparation steps, and enter the recipe required tools in the text area.
-* When the user wish to modify a recipe, edit function added to help the user to edit and update the recipe. Beside each recipe in the recipe list on the home page under the cover photo, the user will find a list of all recipes in whatocook app linked database, an Edit button added to  route the suer to a new html page to edit the wishing recipe's input fields and hit the Edit Recipe blue button at the end of the html page and the user also will be redirected to the home page.
-* For user convenient, a delete button also added in red color beside the edit blue button, should the user wish to delete the recipe on later stage.
+* I want to be able to store a new recipe, as such I can navigate to the top right of the home page to find in the Nav bar a Add recipe link to link to a new page for 
+adding a new recipe by filling a form inputs for the recipe and when I finish, I can hit the Add Recipe green button at the end on add recipe html page to add the recipe,
+ and the user will be redirected to the home page.
+* I want to enter the recipe information. The user can do so, by selecting a cuisine, enter a recipe name, enter recipe name, enter ingredients in text area, enter 
+preparation steps, enter the recipe required tools in the text area, and enter recipes image URL. 
+* When the user wish to modify a recipe, edit function added to help the user to edit and update the recipe. At the buttom of each recipe in the recipe list. 
+Under the cover photo, the user will find a list of all recipes in whatocook app linked database, an Edit button added to  route the user to a new html page to edit 
+the wishing recipe's input fields and hit the Edit Recipe blue button at the end of the html page and the user also will be redirected to the home page.
+* For user convenient, a delete button also added in red color at the end of each recipes drop down, should the user wish to delete the recipe on later stage.
 
 ### User searching for a recipe
-* I want to select a cuisine to start my search about that cuisine recipes. A search link at the top right of the home page a  in the Nav bar provided to start searching. This link is linked to a new html page. The search page currently only has one search function available, it's search by cuisine. On the page under the cover photo, a Select menu provided.the Select menu continue a list of cusuines.
-* I want my search results. When the user select a cusine, he/she can start the search by clicking on the search recipes blue button under the select menu. After, the user will be taking to a new html page menu which will be listing all recipes related to that cuisine.
+* I want to select a recipe name or cuisine to start my search about that recipes. A search link at the top right of the home page a  in the Nav bar provided to start searching.
+ This link is linked to a new html page. The search page currently only has two search functions available, it's search by recipes name or cuisine. 
+* I want my search results. When the user enter a recipe name or select a cusine, he/she can start the search by clicking on the search recipes blue button under. After, 
+the user will be taking to a new html page menu which will be listing all recipes related to that search.
 * I want to see the recipe to start cooking. The user can click on the wishing recipe block, to have all recipes information.
 
 ## Wireframe mockups
@@ -54,7 +68,7 @@ Each recipe has two buttons: Delete in red color and Edit in blue color.
 
 * The land page has 50% heights background, the background image to a cooker for cooking recipes feeling. On the centre of the background image, a paragraph gives the user a direct indicator of the application purpose.
 
-* The app has 9 html pages to fill the user needs to search, add, edit, and delete a cooking recipes.
+* The app has 10 html pages to fill the user needs to search, add, edit, and delete a cooking recipes.
 
 ## Features Left To Implement
 * More search options to search for recipes, for example search by recipe food type.
@@ -84,17 +98,17 @@ Preparation Steps and Required Tools. This we resolved by adding recipes collect
 {{recipe.preparation_steps}}
 {{recipe.required_tools}}
 ```
-In addtion of cuisine was return null value, this was fixed by disbley the cuisine as readonly, as user won't need to edit the cuisine. 
+In addtion of cuisine was return null value when the user dose not re select it, this was fixed by disbley the current cuisine by added selected to the current cuisine value.
 Also, redirect to get_recipes was not working. Deitals below in the (Redirect after Adding Editing and Deleting).
 ### Delete a recipe
 * I tried  and friends by using different devices and screens to delete a recipe from the database and delete a cuisine and it was deleted from the database collections with no error, but redirect to get_recipes was not working. 
 Deitals below in the (Redirect after Adding Editing and Deleting).
 
 ### Search for recipe
-* I have tried and friends by using different devices and screens (see devices below) to search for more than one recipe by it's cuisines.Search function did not display match list of recipes. 
+* I have tried and friends by using different devices and screens (see devices below) to search for more than one recipe by it's cuisines or recipes name, search function did not display match list of recipes when search by cuisine.
 Found mismatch in search_cuisine vs search_by_cuisine in recipebycuisine.html {% for recipe in search_cuisine %}. 
 For user convenient, upper method was added when cuisine is added to match search input.
-Also have added print() to print the search out come. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully.
+Also have added print() to print the search out come. Tested by search for all recipes as French cuisine, all recipes related to that cuisine was listed successfully. Aslo, by recipes name, and it was listed successfully.
 
 ### Redirect after Adding Editing and Deleting
 * After were a recipe / cuisine added editied or deleted, the app was not redirect to get_recipe page, insted was showing error (the site can't be reached) - bug fixed: re-set host to 0.0.0.0 and remove PORT 3000 for redirects to work. 
@@ -128,6 +142,8 @@ This was tested by testing it on different screen sizes.
 * CSS: I ran html code on w3 validator No Error Found.
 
 * Javascript: I ran html code on codebeautify.org/jsvalidate No Error Found.
+
+* Python3: Checked app.py code for [PEP8](http://pep8online.com) requirements. 
 
 ## Deployment
 
