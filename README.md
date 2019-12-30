@@ -73,6 +73,7 @@ Each recipe has two buttons: Delete in red color and Edit in blue color.
 ## Features Left To Implement
 * More search options to search for recipes, for example search by recipe food type.
 * User authentication to edit and delete recipes, only the user who added the recipe can edit and delete that recipe.
+* Function for testing the backend code. 
 
 ## Technologies Used
 * HTML5
@@ -100,6 +101,7 @@ Preparation Steps and Required Tools. This we resolved by adding recipes collect
 ```
 In addtion of cuisine was return null value when the user dose not re select it, this was fixed by disbley the current cuisine by added selected to the current cuisine value.
 Also, redirect to get_recipes was not working. Deitals below in the (Redirect after Adding Editing and Deleting).
+
 ### Delete a recipe
 * I tried  and friends by using different devices and screens to delete a recipe from the database and delete a cuisine and it was deleted from the database collections with no error, but redirect to get_recipes was not working. 
 Deitals below in the (Redirect after Adding Editing and Deleting).
@@ -194,8 +196,7 @@ There are four things needed in order to push our code to Heroku.
 5. Choose bransh (master) and start depolying. [whatocook link](https://whatocook.herokuapp.com/)
 
 ## Credit
-1. Center content (e.g logo, footer): from [W3.org](https://www.w3.org/Style/Examples/007/center.en.html)
-2. Picking colors values: from [htmlcolorcodes.com](https://htmlcolorcodes.com/color-picker/)
+1. Center content (e.g full width text): from [W3.org](https://www.w3.org/Style/Examples/007/center.en.html)
 
 ## Media
 1. Background image: from Pexels.com by [Pixabay](https://www.pexels.com/photo/blaze-blue-blur-bright-266896/)
