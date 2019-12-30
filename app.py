@@ -113,11 +113,7 @@ def search_by_cuisine():
 def recipes_by_cuisine():
     recipe = mongo.db.recipes.find()
     search = request.form.get('recipe_cuisine')
-# print out the search variable - see what we are getting back from the form
-    print(search)
     search_cuisine = mongo.db.recipes.find({"recipe_cuisine": (search)})
-# print out search_cuisine - can see if we're getting a response from mongodb
-    print(search_cuisine)
     return render_template("recipesbycuisine.html", recipe=recipe, search_cuisine=search_cuisine)
 
 # ----------------- search by recipe  -----------------
@@ -127,11 +123,7 @@ def recipes_by_cuisine():
 def recipes_by_name():
     recipe = mongo.db.recipes.find()
     search = request.form.get('recipe_name')
-# print out the search variable - see what we are getting back from the form
-    print(search)
     search_names = mongo.db.recipes.find({"recipe_name": (search)})
-# print out search_cuisine - can see if we're getting a response from mongodb
-    print(search_names)
     return render_template("recipesbyname.html", recipe=recipe, search_names=search_names)
 
 
